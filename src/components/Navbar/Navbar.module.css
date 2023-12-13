@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.nav input[type="tel"] {
+  background-color: var(--dark);
+  font-size: var(--base);
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  max-width: 500;
+  min-width: 200px;
+  height: 40px;
+  padding: 1rem;
+  border-radius: 10px;
+  color: var(--light);
+}
+
+::placeholder {
+  color: var(--light);
+}
+
+.nav button {
+  margin-bottom: 0;
+  background-color: var(--dark);
+  color: var(--light);
+  height: 40px;
+  border: none;
+  padding: 0 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}

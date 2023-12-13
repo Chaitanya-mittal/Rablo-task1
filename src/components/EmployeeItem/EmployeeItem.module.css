@@ -1,0 +1,17 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.imgbox {
+  border: 1px solid white;
+  width: 200px;
+  padding: 1rem;
+  height: 280px;
+  object-fit: center;
+  object-position: center;
+}

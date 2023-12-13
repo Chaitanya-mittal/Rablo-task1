@@ -1,0 +1,59 @@
+.cardFieldset {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid black;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 10px 0 0;
+  background-color: var(--darkest);
+  line-height: 1.5;
+  max-width: 25rem;
+  min-width: 200px;
+}
+
+.cardLegend {
+  width: 100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: var(--darkest);
+  padding: 0 1rem;
+}
+
+.cardLegend input[type="checkbox"] {
+  margin: auto;
+  font-size: 5rem;
+  background-color: rgba(255, 255, 255, 0.731);
+}
+
+.cardLegend h3 {
+  color: black;
+  font-size: var(--h4);
+}
+
+.cardInfo {
+  color: black;
+  text-decoration: none;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid var(--avg); */
+}
+
+.cardInfo div h6 {
+  font-size: 1rem;
+  color: var(--avg);
+}
+
+.cardInfo div p {
+  background-color: var(--avg);
+  font-family: weight;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  border: none;
+  font-size: 1.1rem;
+  padding: 0 5px;
+}

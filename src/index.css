@@ -1,0 +1,81 @@
+:root {
+  --darkest: #023535;
+  --dark: #015958;
+  --avg: #008f8c;
+  --light: #facfce;
+  --base: 1rem;
+  --scale: 1.25;
+
+  --h6: calc(var(--base) * var(--scale));
+  --h5: calc(var(--scale) * var(--h6));
+  --h4: calc(var(--scale) * var(--h5));
+  --h3: calc(var(--scale) * var(--h4));
+  --h2: calc(var(--scale) * var(--h3));
+  --h1: calc(var(--scale) * var(--h2));
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  background-color: var(--darkest);
+}
+
+h1 {
+  font-size: var(--h1);
+  color: var(--light);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+h4 {
+  font-size: var(--h4);
+}
+h5 {
+  font-size: var(--h5);
+}
+
+h6 {
+  font-size: var(--h6);
+}
+
+p {
+  font-size: var(--base);
+}
+
+section {
+  padding: 5rem 1rem;
+}
+
+#navbar-section {
+  padding: 1rem;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: var(--darkest);
+  color: orangered;
+  border: 1px solid orangered;
+}
+
+.btn:hover {
+  color: rgb(183, 135, 118);
+}

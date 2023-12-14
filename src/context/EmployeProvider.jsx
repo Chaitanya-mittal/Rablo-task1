@@ -1,9 +1,12 @@
 import { createContext, useState, useEffect, useContext, useRef } from "react";
-
+import empdata from "../Data";
 const employeeContext = createContext();
 
 function EmployeProvider({ children }) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(() => {
+    const storedData = JSON.parse(localStorage.getItem("EmployeeList"));
+    return storedData === undefined ? empdata : storedData;
+  });
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedEmployee, setSelectedEmployee] = useState({});
@@ -13,27 +16,32 @@ function EmployeProvider({ children }) {
   const markedEmployees = useRef([]);
 
   useEffect(() => {
-    async function fetchEmployeData() {
-      try {
-        setLoading(true);
-        setError(null);
-        const res = await fetch(
-          "https://dummy.restapiexample.com/api/v1/employees"
-        );
-        const fetchedData = await res.json();
-        if (fetchEmployeData.status === "failure") {
-          throw new Error("Error while fetching data");
-        }
-        setData(fetchedData.data);
-      } catch (error) {
-        setError("Something Went Wrong");
-        console.log(error.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchEmployeData();
-  }, []);
+    localStorage.setItem("EmployeeList", JSON.stringify(data));
+  }, [data]);
+
+  // for fetching with api
+  // useEffect(() => {
+  //   async function fetchEmployeData() {
+  //     try {
+  //       setLoading(true);
+  //       setError(null);
+  //       const res = await fetch(
+  //         "https://dummy.restapiexample.com/api/v1/employees"
+  //       );
+  //       const fetchedData = await res.json();
+  //       if (fetchEmployeData.status === "failure") {
+  //         throw new Error("Error while fetching data");
+  //       }
+  //       setData(fetchedData.data);
+  //     } catch (error) {
+  //       setError("Something Went Wrong");
+  //       console.log(error.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+  //   fetchEmployeData();
+  // }, []);
 
   useEffect(() => {
     EmptyMarkedEmployees();

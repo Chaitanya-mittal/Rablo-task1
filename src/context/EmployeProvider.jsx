@@ -24,7 +24,9 @@ function EmployeProvider({ children }) {
       try {
         setLoading(true);
         setError(null);
-        const res = await fetch("http://localhost:5001/employeeDetail");
+        const res = await fetch(
+          "https://dummy.restapiexample.com/api/v1/employees"
+        );
         const fetchedData = await res.json();
         if (fetchEmployeData.status === "failure") {
           throw new Error("Error while fetching data");

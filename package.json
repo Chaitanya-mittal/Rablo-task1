@@ -8,8 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "server": "json-server --watch ./fakeApi/employee.json --port 5001 --delay 500"
+    "preview": "vite preview"
   },
   "dependencies": {
     "json-server": "^0.17.4",

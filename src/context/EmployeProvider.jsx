@@ -1,12 +1,9 @@
 import { createContext, useState, useEffect, useContext, useRef } from "react";
-import empdata from "../Data";
+import { empdata } from "../Data";
 const employeeContext = createContext();
 
 function EmployeProvider({ children }) {
-  const [data, setData] = useState(() => {
-    const storedData = JSON.parse(localStorage.getItem("EmployeeList"));
-    return storedData === undefined ? empdata : storedData;
-  });
+  const [data, setData] = useState(empdata);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedEmployee, setSelectedEmployee] = useState({});
@@ -14,10 +11,6 @@ function EmployeProvider({ children }) {
   const [isSelectbtn, setSelectbtn] = useState(false);
 
   const markedEmployees = useRef([]);
-
-  useEffect(() => {
-    localStorage.setItem("EmployeeList", JSON.stringify(data));
-  }, [data]);
 
   // for fetching with api
   // useEffect(() => {

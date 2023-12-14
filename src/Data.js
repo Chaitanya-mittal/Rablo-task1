@@ -1,4 +1,4 @@
-export default const empdata = [
+export const empdata = [
   {
     id: 1,
     employee_name: "Tiger Nixon",
